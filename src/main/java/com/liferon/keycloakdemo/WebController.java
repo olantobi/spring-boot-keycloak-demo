@@ -5,6 +5,7 @@
  */
 package com.liferon.keycloakdemo;
 
+import java.security.Principal;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -26,9 +27,10 @@ public class WebController {
     }
 
     @GetMapping(path = "/customers")
-    public String customers(Model model) {
+    public String customers(Principal principal, Model model) {
         addCustomers();
         model.addAttribute("customers", customerDAO.findAll());
+        model.addAttribute("username", principal.getName());
         return "customers";
     }
     
