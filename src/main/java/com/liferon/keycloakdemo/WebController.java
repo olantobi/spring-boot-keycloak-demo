@@ -6,6 +6,8 @@
 package com.liferon.keycloakdemo;
 
 import java.security.Principal;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,17 +19,20 @@ import org.springframework.web.bind.annotation.GetMapping;
  */
 @Controller
 public class WebController {
+    private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());
     
     @Autowired
     private CustomerDAO customerDAO;
     
     @GetMapping(path = "/")
     public String index() {
+        LOGGER.info("Called / endpoint");
         return "external";
     }
 
     @GetMapping(path = "/customers")
     public String customers(Principal principal, Model model) {
+        LOGGER.info("Called /customers endpoint to show customers list");
         addCustomers();
         model.addAttribute("customers", customerDAO.findAll());
         model.addAttribute("username", principal.getName());
@@ -36,7 +41,7 @@ public class WebController {
     
     // add customers for demonstration
     public void addCustomers() {
-
+        LOGGER.info("Adding test customers ");
         Customer customer1 = new Customer();
         customer1.setAddress("1111 foo blvd");
         customer1.setName("Foo Industries");
