@@ -7,10 +7,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class KeycloakDemoApplication {
+
     private static final Logger LOGGER = LoggerFactory.getLogger(KeycloakDemoApplication.class);
-    
-	public static void main(String[] args) {
-                LOGGER.info("Starting keycloak demo app...");
-		SpringApplication.run(KeycloakDemoApplication.class, args);
-	}
+
+    public static void main(String[] args) {
+        LOGGER.info("Starting keycloak demo app...");
+        SpringApplication.run(KeycloakDemoApplication.class, args);
+    }    
 }
