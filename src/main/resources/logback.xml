@@ -10,10 +10,10 @@
 		</layout>
 	</appender>
         
-        <appender name="STACKIFY" class="com.stackify.log.logback.StackifyLogAppender">
+<!--        <appender name="STACKIFY" class="com.stackify.log.logback.StackifyLogAppender">
              <apiKey>9Hf5Gi5Va3Jr5Jb7Xa5Cu3Rh5Dq9Nk1Vv1Ps2Uc</apiKey>
                 <application>Keycloak Demo</application>
-                <environment>test</environment>                
+                <environment>test</environment>                -->
         </appender>
         
     <logger name="org.springframework" level="DEBUG" />
@@ -22,7 +22,7 @@
 
      <root level="INFO">
         <appender-ref ref="STACKIFY" />
-        <appender-ref ref="STDOUT" />
+<!--        <appender-ref ref="STDOUT" />-->
     </root>
 
 </configuration>
