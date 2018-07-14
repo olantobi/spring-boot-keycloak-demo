@@ -13,16 +13,16 @@
 <!--        <appender name="STACKIFY" class="com.stackify.log.logback.StackifyLogAppender">
              <apiKey>9Hf5Gi5Va3Jr5Jb7Xa5Cu3Rh5Dq9Nk1Vv1Ps2Uc</apiKey>
                 <application>Keycloak Demo</application>
-                <environment>test</environment>                -->
-        </appender>
+                <environment>test</environment>               
+            </appender>-->
         
     <logger name="org.springframework" level="DEBUG" />
     <logger name="org.hibernate" level="DEBUG" />    
     <logger name="com.liferon.keycloakdemo" level="INFO" />
 
      <root level="INFO">
-        <appender-ref ref="STACKIFY" />
-<!--        <appender-ref ref="STDOUT" />-->
+<!--        <appender-ref ref="STACKIFY" />-->
+        <appender-ref ref="STDOUT" />
     </root>
 
 </configuration>
